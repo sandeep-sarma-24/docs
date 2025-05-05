@@ -1,0 +1,147 @@
+---
+title: "Creating Your first Agent"
+icon: "Robot"
+description: "Time to roll"
+---
+
+### **Introduction & Context**
+
+Creating an agent is where the magic happens! This is where you create your GenAI assistant that interacts with users, making conversations based on the knowledge base and prompt that you've added.
+
+### **Lesson 1: Starting from Scratch or Using a Template**
+
+* **From Scratch:**
+
+  * **When to Use:** When you want full control and customization.
+
+  * **How:**
+
+    * Go to **Manage Agents → Create Agent → Create from Scratch**.
+
+    * Name your agent, give a description for your understanding and click on **Create**.
+
+      ![](/agentscratch.gif)
+
+* **Using a Template:**
+
+  * **When to Use:** When you need a quick start, use templates as they include pre-written system prompts.
+
+  * **How:**
+
+    * Go to **Manage Agents → Create Agent.**
+
+    * Choose a template that best fits your needs and click on Proceed. You can customize your agent later.
+
+    * Name your agent, give a description for your understanding.
+
+    * Link a knowledge base and click on **Create**.
+
+      ![](/agenttemplate.gif)
+
+### **Lesson 2: Writing a Great System Prompt**
+
+* **What It Is:** A system prompt defines your agent's role, behavior, and objectives.
+
+* **Tips for a Great System Prompt:**
+
+  * **Set Clear Objectives:** Provide specific details about what you want your agent to accomplish.
+
+  * **Give Context:** Provide some background information about the role, audience and purpose.
+
+  * **Set Expectations:** Explain the tone, style, and level of formality.
+
+  * **Include Examples:** Provide scenarios to guide responses.
+
+### **Lesson 3: Setting the Model**
+
+* **Greeting Message:** Set the exact message your agent says at the start of the call.
+
+* **Ending Message:** Define the closing statement your agent delivers before ending the call.
+
+* **Provider & Model:** Choose the LLM that powers your interactions.
+
+* **Link Knowledge Base:** Connect your previously created knowledge base so your agent has information to draw upon.
+
+* **Temperature:** This controls creativity. A higher value means more creative (but sometimes less precise) responses, whereas a lower value means conservative responses (sticking strictly to the knowledge base).
+
+* **Max Tokens:** Limits the length of user's responses that the agent can process in one input. A token is usually 3/4 of an English word or 3-4 characters.
+
+### **Lesson 4: Customizing your Agent**
+
+Fine-tuning your agent's settings ensures it not only understands but also reflects your brand's personality. This section is where you polish the details. Head over to the **Customize** tab in Manage Agent section.
+
+**Agent Details:**
+
+* **Language:** Select the language(s) your agent communicates in. Choose a primary language if you're selecting multiple languages.
+
+* **Region & Time Zone:** Select the relevant Region and the Time Zone for your agent. This will set the time and will be used further (when integrations are used).
+
+* **Description:** Specify the way your agent talks with the user.
+
+**Speech Settings:**
+
+* **Transcriber:** Select which Speech Recognition to use to listen to your users.
+
+* **TTS Settings:** Select which Voice your agent should use.
+
+* **Barge:** Choose whether the agent should pause mid-conversation if the user starts speaking.
+
+**Call Settings:**
+
+* **Pre-Call Variables:** Define key details before the call, making conversations more personalized and efficient. Your agent starts the call with relevant details like customer name, account status, issue type, etc.
+
+  * Add as many variables as required and specify the details:
+
+    * **Unique Identifier:** Select one variable as the primary key for each call.
+
+    * **Variable:** A named placeholder storing a value from a database (e.g., *customer\_name, policy\_status*).
+
+    * **Description:** A short note for the LLM to understand the variable’s purpose.
+
+  * Using Pre-Call Variables:&#x9;
+
+    * In the **Greeting Message, Ending Message,** and **System Prompt**, use double curly braces to insert variables dynamically.
+
+    * Example: *"Hi \{\{customer\_name}}, I'm speaking from Gnani Technical Support."*
+
+  * *Example:* If the agent is calling a customer regarding their insurance policy, pre-call variables like *policy\_status* and *renewal\_date* ensure it starts with relevant information instead of asking redundant questions.
+
+*And just like that, your GenAI agent is born! 🎉*
+
+### **Lesson 5: Categorizing Call Outcomes**
+
+Call Dispositions help you track and categorize the outcomes of your agent’s calls. Located within **Analytics Config** tab, this feature allows you to define custom statuses, enabling structured call analysis. To set up Call Dispositions:
+
+* Toggle the **Call Dispositions** feature ON and enter a **default prompt** that helps the LLM understand how to categorize calls.
+
+* Click **Add Disposition** to create a new category. Each disposition includes:
+
+  * **Status Code:** Example values: *Resolved, Unresolved, Follow-Up Requested*, etc
+
+  * **Prompt:** Define when a call should be classified under this status.
+
+* Once configured, the AI will automatically categorize calls based on the provided conditions and you can see the predefined disposition in Call Analytics and Agent Analytics.&#x20;
+
+  ![](/image.png)
+
+### **Lesson 6: Testing your Agent**
+
+**Testing via Chat:**
+
+* Click on **Test → Chat Window → Start Testing \</>** to use the built-in chat interface to test responses.
+
+  ![](/chattesting.gif)
+
+**Testing Voice Interactions:**
+
+* Click on **Test → Web-based (Voice) → Start Testing \</>** to use the web-based voice test to simulate real-world scenarios.
+
+  ![](/testingvoice.gif)
+
+* To share the web-based voice testing tool, go to **Test → Web-based (Voice) → Generate Sharable Link**. The link works for 5 minutes, perfect for giving teammates or clients quick access without login requirements.
+
+  ![](/testingvoice.gif)
+
+***
+
+*Pro Tip:* Experiment with different temperatures, system prompts, transcribers and text-to-speech to see what best suits your use case. The right balance can make your agent more engaging, effective and tailored.

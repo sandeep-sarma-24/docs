@@ -1,13 +1,32 @@
 {
   "$schema": "https://mintlify.com/docs.json",
   "theme": "mint",
-  "name": "Mint Starter Kit",
+  "name": "Aura365 Docs",
+  "description": "Aura365 Docs is a documentation site for Aura365.",
   "colors": {
-    "primary": "#16A34A",
-    "light": "#07C983",
-    "dark": "#15803D"
+    "primary": "#C05555",
+    "light": "#C05555",
+    "dark": "#C05555"
   },
-  "favicon": "/favicon.svg",
+  "background": {
+    "color": {
+      "light": "#FFFFFF"
+    },
+    "decoration": "gradient"
+  },
+  "fonts": {
+    "body": {
+      "family": "Poppins"
+    }
+  },
+  "appearance": {
+    "default": "light",
+    "strict": true
+  },
+  "favicon": "/fav.svg",
+  "seo": {
+    "indexing": "all"
+  },
   "navigation": {
     "tabs": [
       {
@@ -16,87 +35,48 @@
           {
             "group": "Get Started",
             "pages": [
-              "index",
-              "quickstart",
-              "development"
+              "introduction",
+              "M1_KB",
+              "M2_Agent"
             ]
           },
           {
             "group": "Essentials",
             "pages": [
-              "essentials/markdown",
-              "essentials/code",
-              "essentials/images",
-              "essentials/settings",
-              "essentials/navigation",
-              "essentials/reusable-snippets"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "API Reference",
-        "groups": [
-          {
-            "group": "API Documentation",
-            "pages": [
-              "api-reference/introduction"
-            ]
-          },
-          {
-            "group": "Endpoint Examples",
-            "pages": [
-              "api-reference/endpoint/get",
-              "api-reference/endpoint/create",
-              "api-reference/endpoint/delete",
-              "api-reference/endpoint/webhook"
+              "M3_Integrations",
+              "M4_Actions",
+              "M5_Chains",
+              "M6_Numbers",
+              "M7_Analytics",
+              "M8_Support"
             ]
           }
         ]
       }
-    ],
-    "global": {
-      "anchors": [
-        {
-          "anchor": "Documentation",
-          "href": "https://mintlify.com/docs",
-          "icon": "book-open-cover"
-        },
-        {
-          "anchor": "Community",
-          "href": "https://mintlify.com/community",
-          "icon": "slack"
-        },
-        {
-          "anchor": "Blog",
-          "href": "https://mintlify.com/blog",
-          "icon": "newspaper"
-        }
-      ]
-    }
+    ]
   },
   "logo": {
-    "light": "/logo/light.svg",
-    "dark": "/logo/dark.svg"
+    "light": "/logo/logo.svg",
+    "dark": "/logo/logo.svg",
+    "href": "https://aura365.ai"
   },
   "navbar": {
     "links": [
       {
         "label": "Support",
-        "href": "mailto:hi@mintlify.com"
+        "href": "mailto:hello-aura365@aura365.ai"
       }
     ],
     "primary": {
       "type": "button",
       "label": "Dashboard",
-      "href": "https://dashboard.mintlify.com"
+      "href": "https://app.aura365.ai"
     }
   },
   "footer": {
     "socials": {
-      "x": "https://x.com/mintlify",
-      "github": "https://github.com/mintlify",
-      "linkedin": "https://linkedin.com/company/mintlify"
+      "x": "https://x.com/GnaniAi",
+      "linkedin": "https://www.linkedin.com/company/gnani-ai"
     }
   }
 }

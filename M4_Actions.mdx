@@ -1,0 +1,175 @@
+---
+title: 'Managing Variables & Actions'
+icon: 'square-root-variable'
+description: 'Description of your new file.'
+---
+
+## **Introduction & Context**
+
+Variables and actions power automation in your genAI agent. **Variables** allow dynamic data handling, while **actions** trigger workflows based on user interactions.
+
+***
+
+## **Lesson 1: Understanding Variables**
+
+### **What Are Variables?**
+
+Variables act as placeholders for storing and managing data throughout a conversation. They can:
+
+* **Capture user input** (e.g., name, phone number, order details).
+
+* **Store API responses** (e.g., retrieving order status). *(Coming Soon)*
+
+* **Pass data into API requests** (e.g., including an ID for fetching details).
+
+### **How to Create a Variable?**
+
+1. **Define a Name** – Use letters, numbers, or underscores (e.g., `user_name`, `order_id`).
+
+2. **Choose a Data Type**:
+
+   * **Boolean** (True/False)
+
+   * **Integer** (Whole numbers)
+
+   * **Float** (Decimal numbers)
+
+   * **String** (Text, such as names or messages)
+
+3. **Set a Prompt** – Define how the variable gets its value.
+
+   * Example: "Ask the user for their PIN code (must be 6 digits)."
+
+### **When to Use Variables?**
+
+* **On-Call Triggering:**
+
+  * **Before an API Call** – Store user input to pass into an API request.
+
+  * **After an API Call** – Save data received from an API response. *(Clarification needed: What happens if the data isn’t stored?)*
+
+* **Post-Call Triggering:** Use the variable to execute actions after a conversation.
+
+### **Use Cases**
+
+Personalizing emails, customizing SMS messages, or logging details in CRM systems.
+
+***
+
+## **Lesson 2: Setting Up Actions**
+
+### **What Are Actions?**
+
+Actions define **triggers** that send automated responses or execute integrations based on specific conditions.
+
+### **How to Create an Action?**
+
+1. Go to **Manage Agents → Select Agent → Action Tab**.
+
+2. Click the **"+"** button to open the "**Create Action**" card.
+
+3. **Enter a Name** - Use only letters, numbers, or underscores.
+
+4. **Describe the Action** – Example: "Trigger this action when the user asks about available offers."
+
+5. **Select an Integration** – Choose the service to execute the action.
+
+6. **Choose a Trigger:**
+
+   * **Post-Call** – Executes after the conversation ends.
+
+   * **On-Call** – Executes during the conversation.
+
+7. **Create or Add Variables (Optional):**
+
+   * Use variables to store dynamic data like customer names or order details.
+
+   * You can create new variables or reuse existing ones.
+
+### **Integration-Specific Fields**
+
+The fields below depend on the type of integration used.
+
+### **For SMS Action:**
+
+* **Message Template:** Define the SMS content. Insert variables using curly braces:
+
+  * Example: `"Hello {{user_name}}, your order {{order_id}} is on the way!"`
+
+### For Email Action:
+
+* **Select Action:** *(Work in Progress)*
+
+* **Template Name:** Select an email template from Mailchimp.
+
+* **From Name & Email:** The sender’s verified email address in Mailchimp.
+
+* **To Name & Email:** The recipient's email (variable input is recommended).
+
+* **Add Subject:** Customizable subject line (can include variables).
+
+* **Merge Variables:** Map platform variables to Mailchimp template variables:
+
+  * **Key:** Variable in Mailchimp template.
+
+  * **Value:** Corresponding variable created in Inya (use curly braces).
+
+***
+
+### For CRM Action:
+
+* **Select Action:** Choose a CRM action (e.g., CREATE for adding new records). *(Work in Progress)*
+
+* **Module Name:** Specify the CRM module (e.g., Leads, Accounts, Contacts, Deals).
+
+* **Payload:** Define JSON data format:\{  "Company": "Example Corp",  "name": "Smith",  "Email": "john.smith@example.com"}
+
+### For Ticket Action:
+
+* **Select Action:** Choose a ticketing action (e.g., CREATE for new support tickets). *(Work in Progress)*
+
+* **Department ID:** Specify the Zoho Desk department where the ticket should be created.
+
+* **Contact ID:** Associate the ticket with a customer profile. Currently this is for testing the capabilities of the platform, but it will be a dynamic field in the future.
+
+* **Payload:** Define the ticket structure in JSON format. The subject, description and priority are mandatory fields to create a ticket in Zoho Desk.
+
+\{
+&#x20; "subject": "\{\{subject}}",
+&#x20; "description": "\{\{description}}",
+&#x20; "priority": "\{\{priority}}"
+}
+
+### For Custom API Action:
+
+* **Method & URL:** Pre-populated based on the integration.
+
+* Options to turn headers, params and body on and off will be available based on the API Method.
+
+* **Headers:** Send additional information about your API request, such as authentication details or metadata:
+
+  * Example:
+
+    * **Key:** `Authorization`
+
+    * **Value:** `Bearer <your-token>`
+
+* **Params:** Params help filter or modify the request. You can add multiple key-value pairs.
+
+  * Example: Filter by age:
+
+    * **Key:** `age`
+
+    * **Value:** `30`
+
+* **Body:** The body contains the data sent to the API, which is usually in JSON format. You can add multiple key-value pairs.
+
+  * **Key**: `name` → **Value**: `Jack Reacher`
+
+  * **Key**: `email` → **Value**: [`reacher@example.com`](mailto:reacher@example.com)
+
+* **Timeout:** Define max wait time before the request times out. The platform will wait for a response from the server for the defined time before canceling the request. If the server doesn’t respond within this time, the request fails with a timeout error.
+
+*Your genAI agent is now equipped with powerful automation tools! 🎯*
+
+## **Lesson 2: Testing your Actions**

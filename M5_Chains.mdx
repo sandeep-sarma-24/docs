@@ -1,0 +1,213 @@
+---
+title: "Agent Chaining"
+icon: "link"
+description: "Description of your new file."
+---
+
+The Agent Chaining feature on the Inya platform empowers you to build sophisticated, multi-step conversational workflows that truly understands and adapts to your users’ needs. With this, you can design a dynamic conversation pipeline where various nodes interact, decide, and make intelligent decisions. This guide will help you craft your own interactive flow!
+
+## Lesson 1: What is Agent Chaining?
+
+**Agent Chaining** is a visual and intuitive way to design conversation flows. Imagine it as a flowchart where each box (or node) represents a different part of the conversation. By connecting these nodes on a freeform canvas, you create a structured flow where each node handles a specific action or decision point.
+
+### Why build an Agent Chain?
+
+Imagine your genAI agent as a chef: a single recipe (prompt) makes one dish, but **Agent Chaining** lets you create a *full menu* with appetizers, mains, and desserts!
+
+Similarly, Agent Chaining transforms a single specialized agent into a full-scale organization, with genAI ‘employees’ working across departments to solve complex business challenges.
+
+A single-prompt conversational agent may struggle with complex, multi-step interactions. A large system prompt can cause it to lose track of events. With Agent Chaining, you overcome these limitations and gain:
+
+* **Greater Control:** Guide your agent’s conversations through a predefined flow.
+
+* **Contextual Decisions:** Decision nodes enable responses based on user input and conditions.
+
+* **Enhanced User Experience:** Each node specializes in a purpose, making interactions smoother, natural and accurate.
+
+* **Specialization:** Different knowledge bases or actions can be assigned to specific steps.
+
+* **Avoid Pitfalls:** Prevent your agent from looping and hallucination by defining clear pathways.
+
+**Use Cases:**
+
+* **Customer Support:** The agent follows structured troubleshooting steps and escalates to a human agent when needed.
+
+* **Sales:** Qualify leads with conditional questions and transfer calls when all criteria are met.
+
+* **Business Owners:** Create customized conversation flows for various industries like healthcare, legal, and finance, ensuring every type of query is handled accurately.
+
+***
+
+## Lesson 2: Understanding the Node Types
+
+### What Are Nodes?
+
+Nodes are building blocks of your conversation flow. Each node represents an independent agent, by linking them together and defining conditions, you design the conversation path your agent chain will follow.
+
+### Node Types Explained
+
+1. **Default Node**
+
+   * **Purpose:** You can define the purpose of this node to your liking. It handles general queries and serves as a fallback when no other node fits.
+
+   * **How to Use:**
+
+     * Define a clear prompt for the agent’s response.
+
+     * Enable the “Static Text” if you want a fixed response.
+
+     * **Tip:** Use detailed context-rich prompts to ensure natural, effective responses.
+
+2. **User Node**
+
+   * **Purpose:** Captures input from the user.
+
+   * **How to Use:** Simply add a User node to your flow where you need to collect information like a name, email, or specific responses.
+
+3. **Decision Node**
+
+   * **Purpose:** Determines the next step in the conversation based on set conditions.
+
+   * **How to Use:**
+
+     * **Decision Prompt:** Add a condition to choose that path. (E.g., User’s age is less than 18)
+
+     * **Condition:** Optionally, define a prompt in the decision node for complex conditions.
+
+     * **Repeat Count:** Toggle and set a limit for allowing reattempts.
+
+     * **Knowledge Base:** Link a knowledge base for contextual decision-making.
+
+4. **Event Node**
+
+   * **Purpose:** Triggers key events like ending the call, transferring the call to a human agent, or resetting the flow.
+
+   * **How to Use:** Select an event type (such as End Call, Reset, or Transfer) and define the response type (dynamic prompt or a fixed message).
+
+**Connection Rules:**
+
+* **Default** → Can connect to **User** nodes.
+
+* **User** → Can connect to **Decision**, **Default**, or **Event** nodes.
+
+* **Decision** → Can connect to **Default** or **Event** nodes.
+
+* **Event** → Dead-end (conversation stops, restarts or gets transferred).
+
+***
+
+## Lesson 3: **Creating Your First Agent Chain**
+
+Now that you understand the basics, it’s time to create your very first agent chain.
+
+You can create an agent chain in three ways: from scratch, using a prompt, or uploading a JSON file.
+
+### Lesson 3a: Creating from Scratch
+
+1. **Start Fresh:**
+
+   * Go to ‘**Agent Chains**’ and click ‘**+**’.
+
+   * Select ‘**Create from Scratch**’, name your chain, choose an industry, and pick an icon.
+
+2. **Begin with the Start node:**
+
+   * A Start and User node are automatically created.
+
+   * Customize the start node with a greeting message (static or prompt explaining how to start the conversation).
+
+3. **Build Your Flow:**
+
+   * Add more nodes as required by clicking on the ‘**Add Node**’ option at the bottom.
+
+   * **Quick Add:** Hover over an existing node to reveal the connection points on the sides. Click on one to see a menu of compatible nodes that can be added and automatically connected to your selected node.
+
+   * For default and event nodes, choose if the node should speak a static text or function dynamically according to the prompt.
+
+   * For decision nodes, set up your conditions in the path and also the decision node.
+
+   * Connect the nodes by dragging from one connection point to the next.
+
+4. **Save and Test:**
+
+   * Click ‘**Save**’ and try out your new flow to see how it works.
+
+***
+
+### Lesson 3b: Creating Using a Prompt
+
+1. **Start Fresh:**
+
+   * Navigate to ‘**Agent Chains**’ and click ‘**+**’.
+
+   * Select ‘**Create from Prompt**’, name your chain, choose an industry, and pick an icon.
+
+2. **Generate Your Chain:**
+
+   * Provide a detailed prompt describing your conversation flow.
+
+   * The system generates an initial flow based on your input.
+
+3. **Review and Customize:**
+
+   * Edit nodes, change connections, and refine the prompts to better fit your vision.
+
+4. **Save and Test:**
+
+   * Once you’re happy with the flow, save your work and run a test.
+
+***
+
+### Lesson 3c: Uploading a JSON File
+
+1. **Prepare Your File:**
+
+   * Ensure your agent chain is saved in a JSON file. You can find an example here.
+
+2. **Import Your Flow:**
+
+   * Create a new chain from scratch.
+
+   * Click ‘**Import**’ in the top right corner, paste your JSON content and click on ‘**Import’**.
+
+3. **Review the Imported Flow:**
+
+   * The system will load your chain onto the canvas.
+
+   * Adjust node configurations and layout if needed.
+
+4. **Save Your Chain:**
+
+   * Finalize and save your agent chain.
+
+***
+
+## Lesson 4: Configuring your Agent Chain
+
+### Navigating the Canvas
+
+The canvas is your workspace for designing conversations. Think of it as a whiteboard where you visually map out each step of your conversation.
+
+* **Drag & Drop:** Move nodes by dragging them anywhere on the canvas.
+
+* **Connect Nodes**: Hover over a node to show connection points. Click and drag from a point to draw a line, then drop onto another node's connection point to create a flow.
+
+* **Zoom & Pan:** Pan by clicking and dragging anywhere on the canvas. To zoom, pinch using a trackpad or scroll using a mouse.
+
+* **Organization Tools: K**eep your chain neat and easy to manage by using the tools available in the bottom left.
+
+  * ‘**Fit View**’ centers the flow and maximizes zoom out.
+
+  * ‘**Auto Layout’** arranges the nodes neatly in a top-down format.
+
+* **Undo/redo** in the bottom bar helps manage changes.
+
+### Configuring your Chains
+
+* **Configure:** Link global knowledge bases, customize agent languages, time zones, LLM, transcriber, TTS, agent phone numbers and transfer number (if a transfer event node is set up).
+
+* **Global** **Prompt:** Define common agent instructions (tone, style, etc).
+
+* **Manage Integrations:** Connect to third-party services.
+
+* **Manage Actions: C**reate actions to enable the agent to use the integrations. The actions can then be linked to specific nodes.

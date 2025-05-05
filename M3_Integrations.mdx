@@ -1,0 +1,141 @@
+---
+title: "Setting Up Integrations"
+icon: "screwdriver-wrench"
+description: "Description of your new file."
+---
+
+## **Introduction**
+
+Integrations allow your GenAI agent to connect with external systems, automating workflows and enhancing functionality. With integrations, your agent can **send emails, SMS messages, update CRMs, and manage tickets** effortlessly.
+
+To use these integrations, you’ll need to configure **Actions**, which will be covered in the next module.
+
+📍 **To add an integration:**
+
+Navigate to **Manage Agents** → Select Agent → **Integration** tab → Add integration and select the required integration type.
+
+***
+
+## **Lesson 1: SMS Integrations**
+
+### **Why Integrate SMS?**
+
+Enable your agent to send appointment reminders, ticket confirmations, discount codes, and more via SMS.
+
+### How to Set Up:
+
+1. In the Add SMS Integration section, select Twilio as the operator, and provide a name for your integration.
+
+2. Open the **Twilio Console Dashboard** ([https://console.twilio.com/dashboard](https://console.twilio.com/dashboard)) to retrieve credentials.
+
+3. Copy the **Account SID** and **Auth Token** from the Account Info section and paste them into the platform.
+
+   * **Account SID:** A unique 34-character alphanumeric identifier starting with "AC".
+
+   * **Auth Token:** A secure key for authentication.
+
+4. Choose the Sender type:
+
+   * **Phone Number:** Send messages from a fixed number for consistent branding.
+
+     * In Twilio, go to **Develop → Phone Numbers → Manage → Active Numbers**, select an active SMS-enabled number, and paste it into the platform.
+
+     * If you don’t have a number, click **Buy a Number** in Twilio.
+
+   * **Messaging Service:** Use a pool of numbers for sending SMS dynamically based on factors like location and compliance.
+
+     * In Twilio, navigate to **Develop → Messaging → Services**, find the **Messaging Service SID** (starting with "MG"), and paste it into the platform.
+
+     * If you don’t have a messaging service, click **Create Messaging Service** in Twilio.
+
+5. Click **Save** to complete the integration.
+
+***
+
+## **Lesson 2: Email Integrations**
+
+### **Why Integrate Email?**
+
+Enable your agent to send **welcome emails, follow-ups, newsletters, and transactional messages** automatically.
+
+### **How to Set Up:**
+
+1. In the **Add Email Integration** section, select **Mailchimp** as the operator and provide an integration name.
+
+2. Enter the **Mailchimp API Key** (found in your Mailchimp account).
+
+3. Click **Save** to finalize the integration.
+
+***
+
+## **Lesson 3: CRM Integrations**
+
+### **Why Integrate CRM?**
+
+Allow your agent to **automatically create customer records** in Zoho CRM, streamlining lead and support management.
+
+### **How to Set Up:**
+
+1. In the **Add CRM Integration** section, select **Zoho** as the operator and enter an integration name.
+
+2. Open the [Zoho API Console](https://api-console.zoho.in/) to retrieve credentials.
+
+3. Follow [Zoho's guide](https://www.zoho.com/accounts/protocol/oauth/self-client/overview.html) to create a **Self Client**.
+
+4. In the **Client Secret** tab, find the **Client ID** and **Client Secret** and paste them into the platform.
+
+5. Enter the **Account Server URL** based on your primary user region ([choose from here](https://www.zoho.com/accounts/protocol/oauth/multi-dc.html)).
+
+6. Generate the **Account SOID** using step 1 in [this guide](https://www.zoho.com/accounts/protocol/oauth/self-client/authorization-code-flow.html).
+
+7. Specify the required scopes from [Zoho's scope list](https://www.zoho.com/crm/developer/docs/api/v3/scopes.html).
+
+8. Click **Save** to complete the integration.
+
+***
+
+## **Lesson 4: Ticketing Integrations**
+
+### **Why Integrate Ticketing?**
+
+Enable your agent to **create support tickets** in Zoho Desk, automating customer service processes.
+
+### **How to Set Up:**
+
+1. In the **Add Ticket Integration** section, select **Zoho** as the operator and enter an integration name.
+
+2. Open the [Zoho API Console](https://api-console.zoho.in/).
+
+3. Follow [Zoho's guide](https://www.zoho.com/accounts/protocol/oauth/self-client/overview.html) to create a **Self Client**.
+
+4. Retrieve the **Client ID** and **Client Secret** from the **Client Secret** tab and paste them into the platform.
+
+5. Enter the **Account Server URL** ([choose from here](https://www.zoho.com/accounts/protocol/oauth/multi-dc.html)).
+
+6. Generate the **Account SOID** using [this guide](https://www.zoho.com/accounts/protocol/oauth/self-client/authorization-code-flow.html).
+
+7. Specify the required scopes from [Zoho Desk's scope list](https://desk.zoho.com/DeskAPIDocument#OauthTokens#OAuthScopes).
+
+8. Click **Save** to finalize the integration.
+
+***
+
+## **Lesson 5: Custom Integrations**
+
+### **Why Use Custom Integrations?**
+
+For unique use cases, integrate **custom APIs** to expand your agent’s capabilities beyond built-in options.
+
+### **How to Set Up:**
+
+1. In the **Add Custom Integration** section, enter a name and description.
+
+2. Choose an **API Call Method** (GET, POST, etc.) and enter the **API URL**.
+
+3. If authentication is required, enter the **Key** and **Value**.
+
+4. Click **Integrate** to complete the setup.
+
+***
+
+*🚀Your GenAI agent is now integrated and ready to automate workflows! 🌍*
