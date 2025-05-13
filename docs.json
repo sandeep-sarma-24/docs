@@ -1,6 +1,6 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "theme": "mint",
+  "theme": "maple",
   "name": "Aura365 Docs",
   "description": "Aura365 Docs is a documentation site for Aura365.",
   "colors": {
@@ -36,19 +36,19 @@
             "group": "Get Started",
             "pages": [
               "introduction",
-              "M1_KB",
-              "M2_Agent"
+              "Setup",
+              "ManageAgents"
             ]
           },
           {
             "group": "Essentials",
             "pages": [
-              "M3_Integrations",
-              "M4_Actions",
-              "M5_Chains",
-              "M6_Numbers",
-              "M7_Analytics",
-              "M8_Support"
+              "Dashboard",
+              "ScorecardManagement",
+              "UploadRecordings",
+              "AIAnalysis",
+              "QAAnalysis",
+              "ManageQASection"
             ]
           }
         ]
@@ -59,19 +59,6 @@
     "light": "/logo/logo.svg",
     "dark": "/logo/logo.svg",
     "href": "https://aura365.ai"
-  },
-  "navbar": {
-    "links": [
-      {
-        "label": "Support",
-        "href": "mailto:hello-aura365@aura365.ai"
-      }
-    ],
-    "primary": {
-      "type": "button",
-      "label": "Dashboard",
-      "href": "https://app.aura365.ai"
-    }
   },
   "footer": {
     "socials": {
